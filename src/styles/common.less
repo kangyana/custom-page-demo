@@ -1,0 +1,43 @@
+// 引入字体图标库
+@import 'http://at.alicdn.com/t/font_1792066_2k3dygi3zme.css';
+
+* {
+  padding: 0;
+  margin: 0;
+}
+#app {
+  font-size: 14px;
+  color: #606266;
+}
+// 固定填满布局
+.fixed-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+// 点击手势
+.gesture--click {
+  cursor: pointer;
+}
+// 移动手势
+.gesture--move {
+  cursor: move;
+}
+// 纵向滑动
+.vertical-swipe {
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+// 不可选中文本
+.disable-select {
+  -webkit-user-select: none;
+}
+// 字体图标
+.iconfont {
+  line-height: 1;
+}
