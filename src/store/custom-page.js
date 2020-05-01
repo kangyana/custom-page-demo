@@ -38,7 +38,7 @@ const customPage = {
       ]
     },  // 表单
     settingType: 'page',  // 设置区类型,
-    activeIndex: -1 // 当前组件索引
+    activeIndex: -1 // 当前组件Id
   },
   getters: {
 
@@ -50,7 +50,9 @@ const customPage = {
     setForm(state, obj) {
       state.form = obj
     },
-
+    setActiveIndex(state, num) {
+      state.activeIndex = num
+    }
   },
   actions: {
     // 清除组件
@@ -66,7 +68,11 @@ const customPage = {
       commit('setForm', form)
       commit('setSettingType', 'components')
     },
- 
+    // 根据索引激活组件
+    activeComponent({ commit }, index) {
+      commit('setActiveIndex', index)
+      commit('setSettingType', 'component')
+    }
   }
 }
 

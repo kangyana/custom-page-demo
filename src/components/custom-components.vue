@@ -32,16 +32,23 @@
 
 <template>
   <div class="custom-page__components">
-    <div class="custom-page__component gesture--move disable-select" v-for="item in 10" :key="item">
-      <div class="component__icon el-icon-folder"></div>
-      <div class="component__name">XX组件</div>
-    </div>
+    <draggable group="preview-component" :sort="false" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
+      <transition-group tag="div">
+        <div class="custom-page__component gesture--move disable-select" v-for="item in 10" :key="item">
+          <div class="component__icon el-icon-folder"></div>
+          <div class="component__name">{{ item }}组件</div>
+        </div>
+      </transition-group>
+    </draggable>
   </div>
 </template>
 
 <script>
+import Draggable from 'vuedraggable'
+
 export default {
-  
+  components: {
+    Draggable
+  }
 }
 </script>
-

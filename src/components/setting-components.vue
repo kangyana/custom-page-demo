@@ -51,8 +51,8 @@
       <el-popconfirm title="确定清除组件？" @onConfirm="clearComponents">
         <div slot="reference" class="setting-clear-action">清除组件</div>
       </el-popconfirm>
-      <draggable v-model="form.components" group="people" @start="drag=true" @end="drag=false" :options="{ chosenClass: 'choose', animation: 150 }">
-        <transition-group>
+      <draggable v-model="form.components" group="setting-component" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
+        <transition-group tag="div">
           <div class="setting-form-item setting-component" v-for="item in form.components" :key="item.pid">
             <i class="setting-icon el-icon-folder">
               <span class="setting-text">{{ item.stage_code | stageName }}</span>

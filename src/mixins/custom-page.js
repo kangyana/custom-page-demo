@@ -15,11 +15,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(['form', 'settingType', ]),
+    ...mapState(['form', 'settingType', 'activeIndex', ]),
   },
   methods: {
-    ...mapMutations(['setForm', 'setSettingType', ]),
-    ...mapActions(['clearComponents', 'deleteComponent', ]),
+    ...mapMutations(['setForm', 'setSettingType', 'setactiveIndex', ]),
+    ...mapActions(['clearComponents', 'deleteComponent', 'activeComponent', ]),
     // 数组去重
     uniq(array){
       let arr = array.filter(v => v && (v.id || v.id === 0))
