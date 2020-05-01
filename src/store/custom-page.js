@@ -1,0 +1,73 @@
+/**
+ * 定制页 状态管理
+ */
+const customPage = {
+  namespaced: true,
+  state: {
+    form: {
+      name: '',
+      components: [
+        {
+          "pid": 34,
+          "custom_page_id": 35,
+          "name": "全屏banner",
+          "product_ids": null,
+          "link": null,
+          "image_url": "http://dev-1257315589.cos.ap-shanghai.myqcloud.com/marterial-shop/1JS4ckLMRtpF3NUttLyuIgjBqecdQxSScZYTbBm7.jpeg",
+          "video_url": "",
+          "stage_code": "cover_banner",
+          "sort": 0,
+          "content": null,
+          "created_at": "2020-04-07 14:30:31",
+          "updated_at": "2020-04-07 14:30:31"
+        },
+        {
+            "pid": 35,
+            "custom_page_id": 35,
+            "name": "内容",
+            "product_ids": null,
+            "link": null,
+            "image_url": null,
+            "video_url": null,
+            "stage_code": "text_content",
+            "sort": 0,
+            "content": "内容\n内容\n内容\n内容\n内容\n内容\n内容",
+            "created_at": "2020-04-07 14:30:31",
+            "updated_at": "2020-04-07 14:30:31"
+        },
+      ]
+    },  // 表单
+    settingType: 'page',  // 设置区类型,
+    activeIndex: -1 // 当前组件索引
+  },
+  getters: {
+
+  },
+  mutations: {
+    setSettingType(state, str) {
+      state.settingType = str
+    },
+    setForm(state, obj) {
+      state.form = obj
+    },
+
+  },
+  actions: {
+    // 清除组件
+    clearComponents({ state, commit }) {
+      let form = state.form
+      form.components = []
+      commit('setForm', form)
+    },
+    // 根据id删除组件
+    deleteComponent({ state, commit }, pid) {
+      let form = state.form
+      form.components = form.components.filter(v => v.pid !== pid)
+      commit('setForm', form)
+      commit('setSettingType', 'components')
+    },
+ 
+  }
+}
+
+export default customPage

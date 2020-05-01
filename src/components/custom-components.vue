@@ -15,7 +15,7 @@
       font-size: 12px;
       color: #323233;
       .component__icon {
-        font-size: 34px;
+        font-size: 32px;
       }
       .component__name {
         margin-top: 4px;
@@ -33,7 +33,7 @@
 <template>
   <div class="custom-page__components">
     <div class="custom-page__component gesture--move disable-select" v-for="item in 10" :key="item">
-      <div class="component__icon iconfont kyan-component"></div>
+      <div class="component__icon el-icon-folder"></div>
       <div class="component__name">XX组件</div>
     </div>
   </div>
