@@ -55,7 +55,7 @@
       <div class="preview-header">
         <div class="preview-header__title">{{ form.name }}</div>
       </div>
-      <div class="preview-content">
+      <div class="preview-content" @drop="e => drop(e)" @dragover="e => allowDrop(e)">
         <draggable v-model="form.components" group="preview-component" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
           <transition-group tag="div">
             <div class="preview-content-item" v-for="(item, index) in form.components" :key="item.pid" @click="activeComponent(index)">
@@ -80,5 +80,19 @@ export default {
   components: {
     Draggable
   },
+  methods: {
+    // 组件放入
+    drop(ev) {
+      ev.preventDefault()
+      const stageCode = ev.dataTransfer.getData('stageCode')
+      if (stageCode) {
+        this.addComponent(stageCode)
+      }
+    },
+    // 组件放入完毕
+    allowDrop(ev) {
+      ev.preventDefault()
+    },
+  }
 }
 </script>

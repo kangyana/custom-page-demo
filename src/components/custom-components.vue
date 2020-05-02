@@ -32,23 +32,27 @@
 
 <template>
   <div class="custom-page__components">
-    <draggable group="preview-component" :sort="false" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
-      <transition-group tag="div">
-        <div class="custom-page__component gesture--move disable-select" v-for="item in 10" :key="item">
-          <div class="component__icon el-icon-folder"></div>
-          <div class="component__name">{{ item }}组件</div>
-        </div>
-      </transition-group>
-    </draggable>
+    <div class="custom-page__component gesture--move disable-select" v-for="item in componentOptions" :key="item.stage_code" draggable="true" @dragstart="e => dragstart(e, item)">
+      <div class="component__icon el-icon-folder"></div>
+      <div class="component__name">{{ item.name }}</div>
+    </div>
   </div>
 </template>
 
 <script>
-import Draggable from 'vuedraggable'
+import componentOptions from '@/components/componentOptions.json'
 
 export default {
-  components: {
-    Draggable
+  data() {
+    return {
+      componentOptions: componentOptions
+    }
+  },
+  methods: {
+    // 拖动组件
+    dragstart(ev, item) {
+      ev.dataTransfer.setData('stageCode', item.stage_code);
+    },
   }
 }
 </script>

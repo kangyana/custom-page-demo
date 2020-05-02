@@ -72,6 +72,18 @@ const customPage = {
     activeComponent({ commit }, index) {
       commit('setActiveIndex', index)
       commit('setSettingType', 'component')
+    },
+    // 新增组件
+    addComponent({ state, commit }, stageCode) {
+      console.log('stageCode', stageCode)
+      let form = state.form
+      // let component = {
+
+      // }
+      // form.component.push(component)
+      commit('setForm', form)
+      // commit('setActiveIndex', form.component.length - 1)
+      // commit('setSettingType', 'component')
     }
   }
 }

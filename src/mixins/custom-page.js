@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setForm', 'setSettingType', 'setactiveIndex', ]),
-    ...mapActions(['clearComponents', 'deleteComponent', 'activeComponent', ]),
+    ...mapActions(['clearComponents', 'deleteComponent', 'activeComponent', 'addComponent', ]),
     // 数组去重
     uniq(array){
       let arr = array.filter(v => v && (v.id || v.id === 0))
