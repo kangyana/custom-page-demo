@@ -27,7 +27,7 @@
         }
       }
       .preview-content {
-        min-height: 748px;
+        min-height: 713px;
         background: #000;
         .preview-content-item {
           position: relative;
@@ -46,11 +46,19 @@
         }
       }
     }
+    .component__title {
+      position: relative;
+      padding: 24px 0 16px;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      font-family: "YouSheBiaoTiHei";
+    }
   }
 </style>
 
 <template>
-  <div class="custom-page__preview vertical-swipe">
+  <div class="custom-page__preview vertical-swipe disable-select">
     <div class="custom-page__preview--iphone">
       <div class="preview-header">
         <div class="preview-header__title">{{ form.name }}</div>
@@ -59,7 +67,10 @@
         <draggable v-model="form.components" group="preview-component" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
           <transition-group tag="div">
             <div class="preview-content-item" v-for="(item, index) in form.components" :key="item.pid" @click="activeComponent(index)">
-              <div style="height: 200px; color: #fff;">{{ item.stage_code }}</div>
+              <cover-banner-preview v-if="item.stage_code === 'cover_banner'" />
+              <activity-banner-preview v-else-if="item.stage_code === 'activity_banner'" />
+              <cate-banner-preview v-else-if="item.stage_code === 'cate_banner'" />
+              <text-content-preview v-else-if="item.stage_code === 'text_content'" />
               <el-button class="preview-item-tag" size="mini" @click.stop="deleteComponent(item.pid)">
                 <i class="el-icon-delete">&nbsp;{{ item.stage_code | stageName }}</i>
               </el-button>
@@ -74,11 +85,19 @@
 <script>
 import Draggable from 'vuedraggable'
 import customPageMixin from '@/mixins/custom-page'
+import CoverBannerPreview from '@/components/cover-banner-preview'
+import ActivityBannerPreview from '@/components/activity-banner-preview'
+import CateBannerPreview from '@/components/cate-banner-preview'
+import TextContentPreview from '@/components/text-content-preview'
 
 export default {
   mixins: [customPageMixin],
   components: {
-    Draggable
+    Draggable,
+    CoverBannerPreview,
+    ActivityBannerPreview,
+    CateBannerPreview,
+    TextContentPreview
   },
   methods: {
     // 组件放入

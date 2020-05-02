@@ -11,6 +11,21 @@
   },
   {
     "icon": "el-icon-folder",
+    "stage_code": "activity_products",
+    "name": "活动商品"
+  },
+  {
+    "icon": "el-icon-folder",
+    "stage_code": "time_line_products",
+    "name": "时间轴商品"
+  },
+  {
+    "icon": "el-icon-folder",
+    "stage_code": "product_list",
+    "name": "商品列表"
+  },
+  {
+    "icon": "el-icon-folder",
     "stage_code": "cate_banner",
     "name": "分类banner"
   },

@@ -51,7 +51,7 @@ export default {
   methods: {
     // 拖动组件
     dragstart(ev, item) {
-      ev.dataTransfer.setData('stageCode', item.stage_code);
+      ev.dataTransfer.setData('stageCode', item.stage_code)
     },
   }
 }
