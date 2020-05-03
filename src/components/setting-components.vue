@@ -53,12 +53,12 @@
       </el-popconfirm>
       <draggable v-model="form.components" group="setting-component" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
         <transition-group tag="div">
-          <div class="setting-form-item setting-component" v-for="item in form.components" :key="item.pid">
+          <div class="setting-form-item setting-component" v-for="item in form.components" :key="item.id">
             <i class="setting-icon el-icon-folder">
               <span class="setting-text">{{ item.stage_code | stageName }}</span>
               <span v-if="item.name" class="setting-text">（{{ item.name }}）</span>
             </i>
-            <el-popconfirm title="确定删除组件？" @onConfirm="deleteComponent(item.pid)">
+            <el-popconfirm title="确定删除组件？" @onConfirm="deleteComponent(item.id)">
               <i slot="reference" class="setting-icon el-icon-delete"></i>
             </el-popconfirm>
           </div>
