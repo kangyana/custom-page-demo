@@ -14,12 +14,9 @@ const customPage = {
           "product_ids": null,
           "link": null,
           "image_url": "http://dev-1257315589.cos.ap-shanghai.myqcloud.com/marterial-shop/1JS4ckLMRtpF3NUttLyuIgjBqecdQxSScZYTbBm7.jpeg",
-          "video_url": "",
+          "video_url": "http://material-1258771799.cos.ap-shanghai.myqcloud.com/material-shop/wGJiwzUplAjK9k97OLhPvWNr2WJVPtprTj1Sq4L5.mp4",
           "stage_code": "cover_banner",
-          "sort": 0,
           "content": null,
-          "created_at": "2020-04-07 14:30:31",
-          "updated_at": "2020-04-07 14:30:31"
         },
         {
           "id": 35,
@@ -32,8 +29,6 @@ const customPage = {
           "stage_code": "text_content",
           "sort": 0,
           "content": "内容\n内容\n内容\n内容\n内容\n内容\n内容",
-          "created_at": "2020-04-07 14:30:31",
-          "updated_at": "2020-04-07 14:30:31"
         },
       ]
     },  // 表单
@@ -52,7 +47,6 @@ const customPage = {
     },
     setActiveIndex(state, num) {
       state.activeIndex = num
-      console.log(state.activeIndex, num)
     }
   },
   actions: {
@@ -79,10 +73,19 @@ const customPage = {
       let form = state.form
       let component = {
         id: new Date().getTime(),
-        name: '',
-        items: [],
-        content: '',
-        stage_code: stageCode
+        name: 'G圈最热',
+        image_url: 'http://material-shop.admin.xcxd.net.cn/img/activity-banner.32353b8d.png',
+        video_url: '',
+        stage_code: stageCode,
+        content: '強さは、さらなる高みへ。<br>時計にタフネスという 新たな概念を築き上げたG-SHOCK。<br>すべては、落としても壊れない時計を つくるという開発者の熱き信念、<br>当時の常識を覆す、 無謀ともいえる挑戦から始まった。<br>1981年、プロジェクトチームタフ結成。 <br>200を超える試作が繰り返され、 約2年にも及ぶ歳月が費やされた。 <br>完成したのが、耐衝撃構造。 <br>タフの中核を担うテクノロジーの誕生である。 <br>以来、G-SHOCKは、 終わりなき進化を続けてきた。',
+        link: '',
+        categorys: [
+          {
+            name: '分类',
+            image_url: 'http://material-1258771799.cos.ap-shanghai.myqcloud.com/material-shop/cFMWcTp2reeDNPfMWNUlPOhVUYL1b6bsAzYXsKzu.png',
+            link: 'www.hao123.com'
+          }
+        ],
       }
       form.components.push(component)
       commit('setForm', form)

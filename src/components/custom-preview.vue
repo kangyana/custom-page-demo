@@ -67,10 +67,10 @@
         <draggable v-model="form.components" group="preview-component" @start="drag=true" @end="drag=false" :options="{ animation: 150 }">
           <transition-group tag="div">
             <div class="preview-content-item" v-for="(item, index) in form.components" :key="item.id" @click="activeComponent(index)">
-              <cover-banner-preview v-if="item.stage_code === 'cover_banner'" />
-              <activity-banner-preview v-else-if="item.stage_code === 'activity_banner'" />
-              <cate-banner-preview v-else-if="item.stage_code === 'cate_banner'" />
-              <text-content-preview v-else-if="item.stage_code === 'text_content'" />
+              <cover-banner-preview v-if="item.stage_code === 'cover_banner'" :component="item" />
+              <activity-banner-preview v-else-if="item.stage_code === 'activity_banner'" :component="item" />
+              <cate-banner-preview v-else-if="item.stage_code === 'cate_banner'" :component="item" />
+              <text-content-preview v-else-if="item.stage_code === 'text_content'" :component="item" />
               <el-button class="preview-item-tag" size="mini" @click.stop="deleteComponent(item.id)">
                 <i class="el-icon-delete">&nbsp;{{ item.stage_code | stageName }}</i>
               </el-button>
