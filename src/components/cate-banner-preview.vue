@@ -41,11 +41,11 @@
 <template>
   <div class="cate-banner-preview">
     <img class="category__bg" src="http://material-1258771799.cos.ap-shanghai.myqcloud.com/material-shop/kQ2nzuBQ9ZdPONOfZ6XrrCv7s8LcRawgHEdjoYvp.png" />
-    <div class="component__title">{{ component.name }}</div>
+    <div class="component__title text-ellipsis">{{ component.name }}</div>
     <div class="category-warp">
       <div v-for="(item, index) in component.categorys" :key="index" class="category-item">
         <img class="category__img" :src="item.image_url" />
-        <div class="category__name">{{ item.name }}</div>
+        <div class="category__name text-ellipsis">{{ item.name }}</div>
       </div>
     </div>
   </div>

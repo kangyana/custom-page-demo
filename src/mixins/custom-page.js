@@ -1,5 +1,5 @@
 import { createNamespacedHelpers } from 'vuex'
-const { mapState, mapMutations, mapActions } = createNamespacedHelpers('customPage')
+const { mapState, mapGetters, mapMutations, mapActions } = createNamespacedHelpers('customPage')
 import componentOptions from '@/components/componentOptions.json'
 
 export default {
@@ -16,10 +16,11 @@ export default {
   },
   computed: {
     ...mapState(['form', 'settingType', 'activeIndex', ]),
+    ...mapGetters(['activeComponent', ])
   },
   methods: {
-    ...mapMutations(['setForm', 'setSettingType', 'setactiveIndex', ]),
-    ...mapActions(['clearComponents', 'deleteComponent', 'activeComponent', 'addComponent', ]),
+    ...mapMutations(['setForm', 'setSettingType', 'setactiveIndex', 'setActiveComponent', ]),
+    ...mapActions(['clearComponents', 'deleteComponent', 'activateComponent', 'addComponent', ]),
     // 数组去重
     uniq(array){
       let arr = array.filter(v => v && (v.id || v.id === 0))

@@ -12,8 +12,8 @@
 
 <template>
   <div class="text-content-preview">
-    <div v-if="component.name" class="component__title">{{ component.name }}</div>
-    <div v-if="component.content" class="text-content-rich fw500" v-html="component.content"></div>
+    <div v-if="component.name" class="component__title text-ellipsis">{{ component.name }}</div>
+    <div v-if="component.content" class="text-content-rich fw500 text-space">{{ component.content }}</div>
   </div>
 </template>
 

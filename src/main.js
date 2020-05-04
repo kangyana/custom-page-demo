@@ -11,7 +11,9 @@ import {
   FormItem,
   Input,
   Popover,
-  Popconfirm
+  Popconfirm,
+  Radio,
+  Divider,
 } from 'element-ui'
 
 Vue.use(Button)
@@ -20,6 +22,8 @@ Vue.use(Button)
   .use(Input)
   .use(Popover)
   .use(Popconfirm)
+  .use(Radio)
+  .use(Divider)
 
 Vue.config.productionTip = false
 

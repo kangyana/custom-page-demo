@@ -4,7 +4,7 @@
 
 <template>
   <div class="activity-banner-preview">
-    <div v-if="component.name" class="component__title">{{ component.name }}</div>
+    <div v-if="component.name" class="component__title text-ellipsis">{{ component.name }}</div>
     <img :src="component.image_url" width="375" />
   </div>
 </template>

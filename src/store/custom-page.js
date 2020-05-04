@@ -36,7 +36,9 @@ const customPage = {
     activeIndex: 0 // 当前组件Id
   },
   getters: {
-
+    activeComponent(state) {
+      return state.form.components[state.activeIndex]
+    }
   },
   mutations: {
     setSettingType(state, str) {
@@ -47,6 +49,10 @@ const customPage = {
     },
     setActiveIndex(state, num) {
       state.activeIndex = num
+    },
+    // 修改激活组件的内容
+    setActiveComponent(state, obj) {
+      state.form.components[state.activeIndex] = obj
     }
   },
   actions: {
@@ -64,7 +70,7 @@ const customPage = {
       commit('setSettingType', 'components')
     },
     // 根据索引激活组件
-    activeComponent({ commit }, index) {
+    activateComponent({ commit }, index) {
       commit('setActiveIndex', index)
       commit('setSettingType', 'component')
     },
@@ -86,12 +92,18 @@ const customPage = {
             link: 'www.hao123.com'
           }
         ],
+        banners: [
+          {
+            image_url: 'http://material-shop.admin.xcxd.net.cn/img/activity-banner.32353b8d.png',
+            link: 'www.baidu.com'
+          }
+        ]
       }
       form.components.push(component)
       commit('setForm', form)
       commit('setActiveIndex', form.components.length - 1)
       commit('setSettingType', 'component')
-    }
+    },
   }
 }
 
