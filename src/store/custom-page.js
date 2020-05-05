@@ -83,7 +83,7 @@ const customPage = {
         image_url: 'http://material-shop.admin.xcxd.net.cn/img/activity-banner.32353b8d.png',
         video_url: '',
         stage_code: stageCode,
-        content: '強さは、さらなる高みへ。<br>時計にタフネスという 新たな概念を築き上げたG-SHOCK。<br>すべては、落としても壊れない時計を つくるという開発者の熱き信念、<br>当時の常識を覆す、 無謀ともいえる挑戦から始まった。<br>1981年、プロジェクトチームタフ結成。 <br>200を超える試作が繰り返され、 約2年にも及ぶ歳月が費やされた。 <br>完成したのが、耐衝撃構造。 <br>タフの中核を担うテクノロジーの誕生である。 <br>以来、G-SHOCKは、 終わりなき進化を続けてきた。',
+        content: '強さは、さらなる高みへ。↵時計にタフネスという 新たな概念を築き上げたG-SHOCK。↵すべては、落としても壊れない時計を つくるという開発者の熱き信念、↵当時の常識を覆す、 無謀ともいえる挑戦から始まった。↵1981年、プロジェクトチームタフ結成。↵200を超える試作が繰り返され、 約2年にも及ぶ歳月が費やされた。↵完成したのが、耐衝撃構造。 ↵タフの中核を担うテクノロジーの誕生である。↵以来、G-SHOCKは、 終わりなき進化を続けてきた。',
         link: '',
         categorys: [
           {
@@ -104,6 +104,10 @@ const customPage = {
       commit('setActiveIndex', form.components.length - 1)
       commit('setSettingType', 'component')
     },
+    // 发布
+    submitForm({ state }) {
+      console.log(state.form)
+    }
   }
 }
 

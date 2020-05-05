@@ -54,8 +54,8 @@
     </div>
     <!-- 底部 -->
     <div class="custom-page__bottom fixed-view">
-      <el-button size="medium">预览</el-button>
-      <el-button type="primary" size="medium">发布</el-button>
+      <el-button size="medium" @click="submitForm">预览</el-button>
+      <el-button type="primary" size="medium" @click="submitForm">发布</el-button>
     </div>
   </div>
 </template>
@@ -73,13 +73,6 @@ export default {
     CustomComponents,
     CustomPreview,
     CustomSettings,
-  },
-  data() {
-    return {
-    }
-  },
-  methods: {
-
   }
 }
 </script>
